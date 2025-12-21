@@ -14,29 +14,27 @@
 <header> 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <img src="/assets/limu.png" alt="Limu Logo" width="300" height="50" style="margin-right: 10px;">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link active" aria-current="page" href="/" style="font-size: 18px; margin-right: 10px;">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
+          <a class="nav-link active" href="/about" style="font-size: 18px; margin-right: 10px;">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
+          <a class="nav-link active" href="/contact" style="font-size: 18px;">Contact</a>
         </li>
-        <a class="btn btn-outline-dark" href="/" role="button" style="margin-left: 900px;">Log in </a>
+        <a class="btn btn-dark" href="/" role="button" style="margin-left: 1200px;">Log in </a>
     </div>
   </div>
 </nav>
 </header>
 
 <footer>
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.1);">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.0);">
     © 2024 Copyright:
   </div>
 </footer>
