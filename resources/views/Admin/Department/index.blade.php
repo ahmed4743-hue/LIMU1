@@ -28,7 +28,7 @@
                 @forelse ($departments as $department)
                     <tr>
                         <td class="text-center">{{ $department->id }}</td>
-                        <td class="text-center"><strong>{{ $department->name }}</strong></td>
+                        <td class="text-center">{{ $department->name }}</strong></td>
                         <td class="text-center">{{ $department->symbol }}</td>
                         <td class="text-center">
                             <div class="d-flex justify-content-center gap-2">

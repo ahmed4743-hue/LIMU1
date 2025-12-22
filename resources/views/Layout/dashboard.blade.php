@@ -18,7 +18,7 @@
 <body>
 
     <div class="sidebar d-flex flex-column p-3 text-bg-dark" id="sidebar">
-        <h4>Dashboard</h4>
+        <h4><a href="{{ route('dashboard') }}" class="text-white text-decoration-none">Dashboard</a></h4>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li ><a href="#" class="nav-link text-white">Student</a></li>
@@ -27,8 +27,14 @@
             <li><a href="/department" class="nav-link text-white ">Department</a></li>
             <li><a href="#" class="nav-link text-white">Enrollment</a></li>
         </ul>
+            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="mt-3">
+                @csrf
+                <button type="submit" class="btn btn-light w-100">Log out</button>
+            </form>
     </div>
 
+
+        
     
 
         @yield('content') 
