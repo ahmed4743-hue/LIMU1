@@ -12,7 +12,7 @@
 
 
         <div class="mb-3">
-            <label class="form-label">Department ID</label>
+            <label class="form-label">Department Symbol</label>
             <input type="text" name="symbol" class="form-control" required>
         </div>
 

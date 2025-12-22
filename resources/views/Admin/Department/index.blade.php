@@ -18,18 +18,23 @@
         <table class="table table-hover align-middle mb-0">
             <thead class="table-light">
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
+                    <th class="text-center">Department ID</th>
+                    <th class="text-center">Department Name</th>
+                    <th class="text-center">Department Symbol</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @forelse ($departments as $department)
                     <tr>
-                        <td>{{ $department->symbol }}</td>
-                        <td><strong>{{ $department->name }}</strong></td>
+                        <td class="text-center">{{ $department->id }}</td>
+                        <td class="text-center"><strong>{{ $department->name }}</strong></td>
+                        <td class="text-center">{{ $department->symbol }}</td>
                         <td class="text-center">
                             <div class="d-flex justify-content-center gap-2">
+                                <a href="{{ route('department.show', $department->id) }}" class="btn btn-sm btn-dark">
+                                    View
+                                </a>
                                 <a href="{{ route('department.edit', $department->id) }}" class="btn btn-sm btn-warning">
                                     Edit
                                 </a>
