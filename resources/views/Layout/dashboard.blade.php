@@ -25,7 +25,7 @@
             <li><a href="/professor" class="nav-link text-white">Professor</a></li>
             <li><a href="/course" class="nav-link text-white">Course</a></li>
             <li><a href="/department" class="nav-link text-white ">Department</a></li>
-            <li><a href="/Enrollment" class="nav-link text-white">Enrollment</a></li>
+            <li><a href="/enrollment" class="nav-link text-white">Enrollment</a></li>
         </ul>
             <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="mt-3">
                 @csrf
