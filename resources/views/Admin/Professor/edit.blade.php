@@ -15,8 +15,16 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label font-weight-bold">Professor Symbol</label>
-                    <input type="text" name="symbol" class="form-control" value="{{ $professor->symbol }}" required>
+                    <label class="form-label font-weight-bold">Professor Email</label>
+                    <input type="email" name="email" class="form-control" value="{{ $professor->email }}" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label font-weight-bold">Password</label>
+                    <input type="password" name="password" class="form-control" value="{{ $professor->password }}" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label font-weight-bold">Department ID</label>
+                    <input type="text" name="department_id" class="form-control" value="{{ $professor->depId }}" required>
                 </div>
 
                 <div class="d-flex gap-2" >
