@@ -30,5 +30,14 @@ public function adminLogin()
         }
         return redirect()->back()->with('error','invalid email or password');
     }
-
+public function logout(Request $request)
+    {
+        if(Auth::guard('admin')->check())
+        {
+            Auth::guard('admin')->logout();
+        }
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
 }
