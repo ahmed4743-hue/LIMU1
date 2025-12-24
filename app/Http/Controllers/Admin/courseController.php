@@ -62,8 +62,8 @@ class courseController extends Controller
     public function update(Request $request, Course $course)
     {
         $input = $request->validate([
-            'name'   => ['required','unique:courses,name,'],
-            'symbol' => ['required','unique:courses,symbol'],
+            'name'   => ['required','unique:courses,name,' . $course->id],
+            'symbol' => ['required','unique:courses,symbol,' . $course->id],
             'unit'   => ['required','numeric']
         ]);
 

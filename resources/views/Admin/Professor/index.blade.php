@@ -20,17 +20,16 @@
                 <tr>
                     <th class="text-center">Professor Email</th>
                     <th class="text-center">Professor Name</th>
-                    <th class="text-center">Department ID</th>
-                    <th class="text-center">Password</th>
+                    <th class="text-center">Department</th>
+                    <th class="text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($professor as $professor)
+                @forelse ($professors as $professor)
                     <tr>
-                        <td class="text-center">{{ $professor->name }}</strong></td>
                         <td class="text-center">{{ $professor->email }}</td>
-                        <td class="text-center">{{ $professor->department_id }}</td>
-                        <td class="text-center">{{ $professor->password }}</td>
+                        <td class="text-center">{{ $professor->name }}</td>
+                        <td class="text-center">{{ optional($professor->department)->name ?? '—' }}</td>
                         <td class="text-center">
                             <div class="d-flex justify-content-center gap-2">
                                 <a href="{{ route('professor.show', $professor->id) }}" class="btn btn-sm btn-dark">

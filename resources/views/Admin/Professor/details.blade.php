@@ -20,7 +20,8 @@
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h5 class="card-title">{{ $professor->name }}</h5>
-                    <p class="card-text"><strong>symbol:</strong> {{ $professor->symbol }}</p>
+                    <p class="card-text"><strong>Email:</strong> {{ $professor->email }}</p>
+                    <p class="card-text"><strong>Department:</strong> {{ optional($professor->department)->name ?? '—' }}</p>
                     <p class="card-text"><strong>Created:</strong> {{ optional($professor->created_at)->format('Y-m-d') }}</p>
                     <p class="card-text"><strong>Updated:</strong> {{ optional($professor->updated_at)->format('Y-m-d') }}</p>
                 </div>
@@ -31,7 +32,10 @@
     <div class="card shadow-sm">
         <div class="card-body">
             <h5 class="card-title">Related</h5>
-            <p class="card-text"><strong>Professors:</strong> {{ $professor->students->count() }}</p>
+            @php
+                $students = method_exists($professor, 'students') ? ($professor->students ?? collect()) : collect();
+            @endphp
+            <p class="card-text"><strong>Students:</strong> {{ $students->count() }}</p>
         </div>
     </div>
 </div>
@@ -39,9 +43,9 @@
 
 <div class="card shadow-sm">
     <div class="card-body">
-        <h5 class="card-title">Professors</h5>
+        <h5 class="card-title">Students</h5>
 
-        @if($professor->students->isEmpty())
+        @if($students->isEmpty())
             <p class="text-muted">No students assigned to this professor.</p>
         @else
             <div class="table-responsive">
@@ -50,10 +54,10 @@
                         <tr><th>Name</th><th>Email</th></tr>
                     </thead>
                     <tbody>
-                        @foreach($professor->students as $student)
+                        @foreach($students as $student)
                             <tr>
-                                <td>{{ $professor->name }}</td>
-                                <td>{{ $professor->email }}</td>
+                                <td>{{ $student->name }}</td>
+                                <td>{{ $student->email }}</td>
                             </tr>
                         @endforeach
                     </tbody>

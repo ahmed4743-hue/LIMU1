@@ -57,7 +57,7 @@ class studentController extends Controller
      */
     public function show(Student $student)
     {
-        return view('Admin.Student.edit', compact('student'));
+        return view('Admin.Student.details', compact('student'));
     }
 
     /**
@@ -74,12 +74,12 @@ class studentController extends Controller
     public function update(Request $request, Student $student)
     {
         $input = $request->validate([
-        'stNo'     => ['required', 'unique:students,stNo,'],
+        'stNo'     => ['required', 'unique:students,stNo,' . $student->id],
         'name'     => ['required'],
         'email'    => [
             'required',
             'email',
-            'unique:students,email,',
+            'unique:students,email,' . $student->id,
             'regex:/^[A-Za-z0-9._%+-]+@limu\.edu\.ly$/'
         ],
         'password' => ['nullable'],

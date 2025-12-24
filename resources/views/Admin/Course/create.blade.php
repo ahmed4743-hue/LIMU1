@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mt-4">
-    <h2>Add New Course </h2>
+    <h2>Add New Course</h2>
     
     <form action="/course" method="POST">
         @csrf <div class="mb-3">
@@ -17,8 +17,8 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Course Credit</label>
-            <input type="text" name="symbol" class="form-control" required>
+            <label class="form-label">Course Unit</label>
+            <input type="number" name="unit" class="form-control" required>
         </div>
 
         <button type="submit" class="btn btn-dark">Save Course</button>

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mt-4">
-    <h2>Add New Professor </h2>
+    <h2>Add New Professor</h2>
 
     <form action="/professor" method="POST">
         @csrf <div class="mb-3">
@@ -13,12 +13,17 @@
 
         <div class="mb-3">
             <label class="form-label">Professor Email</label>
-            <input type="text" name="email" class="form-control" required>
+            <input type="email" name="email" class="form-control" required>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Department ID</label>
-            <input type="text" name="department_id" class="form-control" required>
+            <label class="form-label">Department</label>
+            <select name="depId" class="form-select" required>
+                <option value="" disabled selected>Select Department</option>
+                @foreach($departments ?? [] as $department)
+                    <option value="{{ $department->id }}">{{ $department->name }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3">
             <label class="form-label">Password</label>

@@ -18,18 +18,18 @@
         <table class="table table-hover align-middle mb-0">
             <thead class="table-light">
                 <tr>
-                    <th class="text-center">Course Symbol </th>
+                    <th class="text-center">Course Symbol</th>
                     <th class="text-center">Course Name</th>
-                    <th class="text-center">Course Credit</th>
+                    <th class="text-center">Course Unit</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($course as $course)
+                @forelse ($courses as $course)
                     <tr>
-                        <td class="text-center">{{ $course->Credit }}</td>
-                        <td class="text-center">{{ $course->name }}</strong></td>
                         <td class="text-center">{{ $course->symbol }}</td>
+                        <td class="text-center">{{ $course->name }}</td>
+                        <td class="text-center">{{ $course->unit }}</td>
                         <td class="text-center">
                             <div class="d-flex justify-content-center gap-2">
                                 <a href="{{ route('course.show', $course->id) }}" class="btn btn-sm btn-dark">

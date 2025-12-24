@@ -21,11 +21,11 @@
         <h4><a href="{{ route('dashboard') }}" class="text-white text-decoration-none">Dashboard</a></h4>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
-            <li ><a href="#" class="nav-link text-white">Student</a></li>
-            <li><a href="#" class="nav-link text-white">Professor</a></li>
-            <li><a href="#" class="nav-link text-white">Course</a></li>
+            <li ><a href="/student" class="nav-link text-white">Student</a></li>
+            <li><a href="/professor" class="nav-link text-white">Professor</a></li>
+            <li><a href="/course" class="nav-link text-white">Course</a></li>
             <li><a href="/department" class="nav-link text-white ">Department</a></li>
-            <li><a href="#" class="nav-link text-white">Enrollment</a></li>
+            <li><a href="/Enrollment" class="nav-link text-white">Enrollment</a></li>
         </ul>
             <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="mt-3">
                 @csrf
