@@ -20,6 +20,8 @@ Route::get('/contact', [homeController::class,'contact'])->name('home.contact');
 
 
 Route::get('/adminLogin', [authController::class,'adminLogin'])->name('admin.login');
+// Alias for framework default redirect target
+Route::get('/login', [authController::class,'adminLogin'])->name('login');
 Route::post('/adminLogin', [authController::class,'adminCheckLogin'])->name('admin.adminCheckLogin');
 
 Route::middleware('auth:admin')->group(function () {
